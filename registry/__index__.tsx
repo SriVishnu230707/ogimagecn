@@ -79,7 +79,6 @@ const registry: Record<string, RegistryEntry> = {
   grid: { Component: Grid, config: gridConfig },
   "grid-lines": { Component: GridLinesDemo, config: gridLinesDemoConfig },
   livestream: { Component: Livestream, config: livestreamConfig },
-
   logo: { Component: Logo, config: logoConfig },
   owner: { Component: Owner, config: ownerConfig },
   photo: { Component: Photo, config: photoConfig },

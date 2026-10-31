@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a reproducible bug in shadercn.
+description: Report a reproducible bug in ogimagecn.
 labels: ["bug"]
 body:
   - type: markdown
@@ -7,9 +7,9 @@ body:
       value: |
         Thanks for taking the time to file a bug report. Before opening a new issue:
 
-        - [Search existing issues](https://github.com/shadcn-labs/shadercn/issues) and upvote instead of duplicating — it gets bugs fixed faster.
-        - Verify the bug still reproduces on the **latest** shadercn release; it may already be fixed.
-        - For questions or help with your own project, use [Discussions](https://github.com/shadcn-labs/shadercn/discussions) instead.
+        - [Search existing issues](https://github.com/shadcn-labs/ogimagecn/issues) and upvote instead of duplicating — it gets bugs fixed faster.
+        - Verify the bug still reproduces with the **latest** ogimagecn registry item or repository revision; it may already be fixed.
+        - For questions or help with your own project, use [Discussions](https://github.com/shadcn-labs/ogimagecn/discussions) instead.
   - type: input
     id: reproduction
     attributes:
@@ -18,7 +18,7 @@ body:
         A link to a **public** GitHub repository that reproduces the issue. Include **only** the changes that contribute to the bug — no unrelated tools, connections, or app code.
 
         A minimal reproduction is the single most useful thing you can give us. **Issues without a valid reproduction link may be closed as not actionable.**
-      placeholder: "https://github.com/user/my-shadercn-bug-reproduction"
+      placeholder: "https://github.com/user/my-ogimagecn-bug-reproduction"
     validations:
       required: true
   - type: textarea
@@ -42,11 +42,11 @@ body:
     validations:
       required: true
   - type: input
-    id: shadercn-version
+    id: ogimagecn-version
     attributes:
-      label: shadercn version
-      description: The exact version from your lockfile (`npm ls shadercn` or check `package.json`), not a semver range.
-      placeholder: "shadercn@0.1.0"
+      label: ogimagecn registry item or repository revision
+      description: The registry item you installed and when you installed it, or the repository commit SHA (`git rev-parse HEAD`) if you are running the docs locally.
+      placeholder: "@ogimagecn/blog-1, installed 2026-10-31; or commit SHA"
     validations:
       required: true
   - type: textarea

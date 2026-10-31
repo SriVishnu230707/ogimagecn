@@ -1,17 +1,17 @@
-# Contributing to shadercn
+# Contributing to ogimagecn
 
 Thanks for your interest in contributing! This guide covers everything you need to get the repo running locally and land a change.
 
 ## Prerequisites
 
 - **Node.js 20+**
-- **pnpm** — version pinned in [`package.json`](./package.json)
+- **pnpm 10.28.2** — the version used in [CI](./.github/actions/setup/action.yml)
 
 ## Getting started
 
 ```bash
-git clone https://github.com/shadcn-labs/shadercn.git
-cd shadercn
+git clone https://github.com/shadcn-labs/ogimagecn.git
+cd ogimagecn
 pnpm install
 ```
 
@@ -52,7 +52,7 @@ A pre-commit hook via [lefthook](https://github.com/evilmartians/lefthook) autom
 
 Every pull request must be tied to an issue. Before opening a PR, search the existing issues, discussions, and pull requests so you do not duplicate active work. If there is no existing issue, open one with the relevant template and describe the problem, use case, or bug reproduction.
 
-For non-trivial changes, wait for discussion on the issue before investing in the implementation. The goal is to agree that the problem is real and that the proposed direction fits shadercn before review shifts to code.
+For non-trivial changes, wait for discussion on the issue before investing in the implementation. The goal is to agree that the problem is real and that the proposed direction fits ogimagecn before review shifts to code.
 
 To avoid PRs that are unlikely to be reviewed or merged:
 
@@ -98,7 +98,7 @@ git rebase --signoff main
 
 ## Reporting bugs and requesting features
 
-Please use the [issue templates](https://github.com/shadcn-labs/shadercn/issues/new/choose). For security issues, **do not open a public issue** — follow [SECURITY.md](./SECURITY.md) instead.
+Please use the [issue templates](https://github.com/shadcn-labs/ogimagecn/issues/new/choose). For security issues, **do not open a public issue** — follow [SECURITY.md](./SECURITY.md) instead.
 
 ## Code of conduct
 
@@ -106,4 +106,4 @@ This project follows the [Code of Conduct](./CODE_OF_CONDUCT.md). By participati
 
 ## License
 
-shadercn is licensed under the [MIT License](./LICENSE). By contributing, you agree that your contributions will be licensed under that same license (inbound = outbound).
+ogimagecn is licensed under the [MIT License](./LICENSE). By contributing, you agree that your contributions will be licensed under that same license (inbound = outbound).

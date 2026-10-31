@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest an idea or improvement for shadercn.
+description: Suggest an idea or improvement for ogimagecn.
 labels: ["enhancement"]
 body:
   - type: textarea

@@ -213,12 +213,12 @@ const withTimeout = async <T>(fn: (signal: AbortSignal) => Promise<T>) => {
 const readMeta = (html: string) => {
   const pick = (key: string) => {
     const re = new RegExp(
-      `<meta[^>]+(?:property|name)=["']${key}["'][^>]*content=["']([^"']*)["']|` +
-        `<meta[^>]+content=["']([^"']*)["'][^>]*(?:property|name)=["']${key}["']`,
+      `<meta\\b[^>]+(?:property|name)\\s*=\\s*["']${key}["'][^>]*content\\s*=\\s*(?:"([^"]*)"|'([^']*)')|` +
+        `<meta\\b[^>]+content\\s*=\\s*(?:"([^"]*)"|'([^']*)')[^>]*(?:property|name)\\s*=\\s*["']${key}["']`,
       "i"
     );
     const m = html.match(re);
-    return m ? (m[1] ?? m[2] ?? "").trim() : "";
+    return m ? (m[1] ?? m[2] ?? m[3] ?? m[4] ?? "").trim() : "";
   };
   /* The declared favicon, if any. <link rel="icon" ...> wins and the
      apple-touch-icon is the fallback. data: URIs are skipped: they can be

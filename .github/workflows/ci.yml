@@ -35,6 +35,9 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Regression tests
+        run: pnpm test
+
       - name: Build
         env:
           NEXT_TELEMETRY_DISABLED: 1

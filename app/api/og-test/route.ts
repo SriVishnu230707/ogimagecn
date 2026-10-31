@@ -395,6 +395,12 @@ const buildFindings = (
   return out;
 };
 
+const isScanRequest = (body: unknown): body is { url: string } =>
+  typeof body === "object" &&
+  body !== null &&
+  "url" in body &&
+  typeof body.url === "string";
+
 export const POST = async (request: Request) => {
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
@@ -414,7 +420,7 @@ export const POST = async (request: Request) => {
     );
   }
 
-  let body: { url?: string };
+  let body: unknown;
   try {
     body = await request.json();
   } catch {
@@ -424,7 +430,14 @@ export const POST = async (request: Request) => {
     );
   }
 
-  const input = (body.url ?? "").trim();
+  if (!isScanRequest(body)) {
+    return Response.json(
+      { error: "Send a JSON body with a url string." },
+      { status: 400 }
+    );
+  }
+
+  const input = body.url.trim();
   if (!input) {
     return Response.json({ error: "Enter a URL." }, { status: 400 });
   }

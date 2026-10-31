@@ -334,14 +334,14 @@ const buildFindings = (
     });
     return out;
   }
-  if (!meta.title) {
+  if (!meta.ogTitle) {
     out.push({
       detail:
         "Platforms fall back to the page title, which is usually written for search, not for sharing.",
       title: "No og:title",
     });
   }
-  if (!meta.description) {
+  if (!meta.ogDescription) {
     out.push({
       detail:
         "The line under the image will be empty or scraped from the page.",

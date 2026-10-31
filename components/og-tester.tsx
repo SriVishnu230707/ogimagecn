@@ -6,7 +6,6 @@ import {
   TriangleAlertIcon,
 } from "lucide-react";
 import { useState } from "react";
-import { z } from "zod";
 
 import {
   BlueskyIcon,
@@ -68,6 +67,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Input } from "@/components/ui/input";
+import { scanUrlSchema } from "@/lib/scan-url";
 import { cn } from "@/lib/utils";
 
 interface Meta {
@@ -654,8 +654,6 @@ const Report = ({
   );
 };
 
-const urlSchema = z.url("Enter a valid URL");
-
 export const OgTester = ({ platform }: { platform?: ScanPlatformId }) => {
   const [url, setUrl] = useState("");
   const [fieldError, setFieldError] = useState("");
@@ -668,7 +666,7 @@ export const OgTester = ({ platform }: { platform?: ScanPlatformId }) => {
     setFieldError("");
     setError("");
 
-    const parsed = urlSchema.safeParse(url);
+    const parsed = scanUrlSchema.safeParse(url);
     if (!parsed.success) {
       setFieldError(parsed.error.issues[0].message);
       return;

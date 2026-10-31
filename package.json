@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "pnpm registry:build && next build",
     "start": "next start",
+    "test": "node --test tests/*.test.mjs",
     "typecheck": "tsc --noEmit",
     "registry:build": "shadcn build registry.json --output ./public/r",
     "postinstall": "fumadocs-mdx",
